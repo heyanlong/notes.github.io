@@ -85,24 +85,27 @@
 
 
 <meta name="description" content="Javascript原型继承在我们所能阅读到的网络内容里面无处不在。然而Javascript通过new运算符提供了一个默认的原型继承实例。因此，大多数的解释都令人阅读起来很费力。本文旨在阐明什么是原型继承以及如何在Javascript中使用原型继承。
-原型继承的定义当你在阅读关于Javascript原型继承资料时，你经常能看到如下定义：
+¶原型继承的定义
+当你在阅读关于Javascript原型继承资料时，你经常能看到如下定义：
 
-当访问一个对象的属性时，JavasScript将会向上对原">
+当访问一个对象的属性时，JavasScript将会向上">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How Prototypal Inheritance really works">
 <meta property="og:url" content="http://notes.hyl.pw/2017/1.html">
 <meta property="og:site_name" content="延龙笔记">
 <meta property="og:description" content="Javascript原型继承在我们所能阅读到的网络内容里面无处不在。然而Javascript通过new运算符提供了一个默认的原型继承实例。因此，大多数的解释都令人阅读起来很费力。本文旨在阐明什么是原型继承以及如何在Javascript中使用原型继承。
-原型继承的定义当你在阅读关于Javascript原型继承资料时，你经常能看到如下定义：
+¶原型继承的定义
+当你在阅读关于Javascript原型继承资料时，你经常能看到如下定义：
 
-当访问一个对象的属性时，JavasScript将会向上对原">
+当访问一个对象的属性时，JavasScript将会向上">
 <meta property="og:updated_time" content="2017-01-18T07:22:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How Prototypal Inheritance really works">
 <meta name="twitter:description" content="Javascript原型继承在我们所能阅读到的网络内容里面无处不在。然而Javascript通过new运算符提供了一个默认的原型继承实例。因此，大多数的解释都令人阅读起来很费力。本文旨在阐明什么是原型继承以及如何在Javascript中使用原型继承。
-原型继承的定义当你在阅读关于Javascript原型继承资料时，你经常能看到如下定义：
+¶原型继承的定义
+当你在阅读关于Javascript原型继承资料时，你经常能看到如下定义：
 
-当访问一个对象的属性时，JavasScript将会向上对原">
+当访问一个对象的属性时，JavasScript将会向上">
 
 
 
@@ -325,7 +328,8 @@
 
       
         <p>Javascript原型继承在我们所能阅读到的网络内容里面无处不在。然而Javascript通过new运算符提供了一个默认的原型继承实例。因此，大多数的解释都令人阅读起来很费力。本文旨在阐明什么是原型继承以及如何在Javascript中使用原型继承。</p>
-<h2 id="原型继承的定义"><a href="#原型继承的定义" class="headerlink" title="原型继承的定义"></a>原型继承的定义</h2><p>当你在阅读关于Javascript原型继承资料时，你经常能看到如下定义：</p>
+<h2 id="原型继承的定义"><a class="header-anchor" href="#原型继承的定义">¶</a>原型继承的定义</h2>
+<p>当你在阅读关于Javascript原型继承资料时，你经常能看到如下定义：</p>
 <blockquote>
 <p>当访问一个对象的属性时，JavasScript将会向上对原型链进行横切直到找到请求的名称的属性。<a href="http://bonsaiden.github.com/JavaScript-Garden/#object.prototype" target="_blank" rel="external">Javascript Garden</a></p>
 </blockquote>
@@ -333,8 +337,9 @@
 <blockquote>
 <p>提示：<em>__proto__</em> 是不规范的且不应该出现在你的代码中。在本文中使用它仅作为阐明Javascript原型继承工作原理。</p>
 </blockquote>
-<p>下面这段代码展示了Javascript引擎是如何检索属性的（仅供阅读）。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getProperty</span>(<span class="params">obj, prop</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (obj.hasOwnProperty(prop))</div><div class="line">    <span class="keyword">return</span> obj[prop]</div><div class="line"> </div><div class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (obj.__proto__ !== <span class="literal">null</span>)</div><div class="line">    <span class="keyword">return</span> getProperty(obj.__proto__, prop)</div><div class="line"> </div><div class="line">  <span class="keyword">else</span></div><div class="line">    <span class="keyword">return</span> <span class="literal">undefined</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>举一个常用的例子：2D Point(二维点)。一个点拥有两个坐标值 <em>x</em>,<em>y</em>,以及一个<em>print</em>方法。使用之前的关于原型继承的书面定义，我们将会创建一个带有<em>x</em>,<em>y</em>,<em>print</em>等三个属性的二维点对象。为了创建这个新的二维点，我们只是创建了一个带有<em>__proto__</em>的新对象并赋值给<em>Point</em>。</p>
+<p>下面这段代码展示了Javascript引擎是如何检索属性的（仅供阅读）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getProperty</span>(<span class="params">obj, prop</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (obj.hasOwnProperty(prop))</div><div class="line">    <span class="keyword">return</span> obj[prop]</div><div class="line"> </div><div class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (obj.__proto__ !== <span class="literal">null</span>)</div><div class="line">    <span class="keyword">return</span> getProperty(obj.__proto__, prop)</div><div class="line"> </div><div class="line">  <span class="keyword">else</span></div><div class="line">    <span class="keyword">return</span> <span class="literal">undefined</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>举一个常用的例子：2D Point(二维点)。一个点拥有两个坐标值 <em>x</em>,<em>y</em>,以及一个<em>print</em>方法。使用之前的关于原型继承的书面定义，我们将会创建一个带有<em>x</em>,<em>y</em>,<em>print</em>等三个属性的二维点对象。为了创建这个新的二维点，我们只是创建了一个带有*__proto__<em>的新对象并赋值给</em>Point*。</p>
 <p><a href="http://blog.vjeux.com/2011/javascript/how-prototypal-inheritance-really-works.html" target="_blank" rel="external">原文链接</a></p>
 
       
@@ -497,7 +502,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原型继承的定义"><span class="nav-number">1.</span> <span class="nav-text">原型继承的定义</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原型继承的定义"><span class="nav-number">1.</span> <span class="nav-text">¶原型继承的定义</span></a></li></ol></div>
             
 
           </div>
@@ -537,6 +542,9 @@
   </a>
 </div>
 
+<div style="position: absolute;left: 0px;bottom: 0px;">
+  <a href="https://www.upyun.com/index.html" title="感谢又拍云提供云存储支持" target="_blank"><img src="http://hylpwfile.b0.upaiyun.com/static/www/img/upyun_logo_90x45.png"></a>
+</div>
 
         
 

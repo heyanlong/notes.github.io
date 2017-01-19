@@ -318,8 +318,32 @@
       
         
           
-            <p>看到同事都在用机械键盘来编写世界上最好的语言</p>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2>
+            <p>看到同事都在用机械键盘来编写世界上最好的语言，自己心里痒痒😂 但是找来找去也没找到合适的，主要还是<strong>穷</strong>给闹的。
+后来在网上搜寻了一番找到了GH60<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>和tmk_keyboard<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>项目。软件硬件都有了😄 搞起来。</p>
+<h2 id="准备"><a class="header-anchor" href="#准备">¶</a>准备</h2>
+<ol>
+<li>PCB 绘制工具 KiCad</li>
+<li>AVR C 语言开发环境 <em>CrossPack-AVR</em></li>
+<li>试轴器一个，包含 黑、红、青、茶、四个常用轴体</li>
+<li>制作材料一套，主要包含键盘冒、轴体若干、1n4148二级管若干、atmega32u4主控一个、恒温电烙铁一个、鸡翅木板一块</li>
+</ol>
+<h2 id="定制自己喜欢的布局"><a class="header-anchor" href="#定制自己喜欢的布局">¶</a>定制自己喜欢的布局</h2>
+<p>自己制作键盘主要是可以根据自己的需求来定制布局。由于GH60<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1]</a></sup>项目是60%布局，缺少了我常用的Page Up、Page Down、Home、End和上下左右按键，所以只能自己定制了😄</p>
+<p>刚好有<a href="http://www.keyboard-layout-editor.com/#/" target="_blank" rel="external">keyboard-layout-editor</a>这个项目可以来自定义布局</p>
+<p>我的布局</p>
+<p><img src="http://hylpwfile.b0.upaiyun.com/images/2017/2/keyboard-layout.png" alt="keyboard-layout"></p>
+<p>布局代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[&quot;~\n`&quot;,&quot;!\n1&quot;,&quot;@\n2&quot;,&quot;#\n3&quot;,&quot;$\n4&quot;,&quot;%\n5&quot;,&quot;^\n6&quot;,&quot;&amp;\n7&quot;,&quot;*\n8&quot;,&quot;(\n9&quot;,&quot;)\n0&quot;,&quot;_\n-&quot;,&quot;+\n=&quot;,&#123;w:1.5&#125;,&quot;Backspace&quot;,&#123;x:0.25&#125;,&quot;FN&quot;,&quot;Home&quot;,&quot;Page up&quot;],</div><div class="line">[&#123;w:1.5&#125;,&quot;Tab&quot;,&quot;Q&quot;,&quot;W&quot;,&quot;E&quot;,&quot;R&quot;,&quot;T&quot;,&quot;Y&quot;,&quot;U&quot;,&quot;I&quot;,&quot;O&quot;,&quot;P&quot;,&quot;&#123;\n[&quot;,&quot;&#125;\n]&quot;,&quot;|\n\\&quot;,&#123;x:0.25&#125;,&quot;Delete&quot;,&quot;End&quot;,&quot;Page Down&quot;],</div><div class="line">[&#123;w:1.75&#125;,&quot;Caps Lock&quot;,&quot;A&quot;,&quot;S&quot;,&quot;D&quot;,&quot;F&quot;,&quot;G&quot;,&quot;H&quot;,&quot;J&quot;,&quot;K&quot;,&quot;L&quot;,&quot;:\n;&quot;,&quot;\&quot;\n&apos;&quot;,&#123;w:1.75&#125;,&quot;Enter&quot;],</div><div class="line">[&#123;w:2.25&#125;,&quot;Shift&quot;,&quot;Z&quot;,&quot;X&quot;,&quot;C&quot;,&quot;V&quot;,&quot;B&quot;,&quot;N&quot;,&quot;M&quot;,&quot;&lt;\n,&quot;,&quot;&gt;\n.&quot;,&quot;?\n/&quot;,&#123;w:2.25&#125;,&quot;Shift&quot;,&#123;x:1.25&#125;,&quot;up&quot;],</div><div class="line">[&#123;w:1.5&#125;,&quot;Ctrl&quot;,&#123;w:1.25&#125;,&quot;Opt&quot;,&#123;w:1.5&#125;,&quot;Command&quot;,&#123;a:7,w:6&#125;,&quot;&quot;,&#123;a:4,w:1.5&#125;,&quot;Command&quot;,&#123;w:1.25&#125;,&quot;Opt&quot;,&#123;w:1.5&#125;,&quot;Ctrl&quot;,&#123;x:0.25&#125;,&quot;left&quot;,&quot;down&quot;,&quot;right&quot;]</div></pre></td></tr></table></figure>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://github.com/komar007/gh60" target="_blank" rel="external">开源的机械键盘硬件方案</a>. <a href="#fnref1" class="footnote-backref">↩</a> <a href="#fnref1:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://github.com/tmk/tmk_keyboard" target="_blank" rel="external">基于AVR和Cortex-M的键盘主控程序</a>. <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+
           
         
       
@@ -438,7 +462,8 @@
         
           
             <p>Javascript原型继承在我们所能阅读到的网络内容里面无处不在。然而Javascript通过new运算符提供了一个默认的原型继承实例。因此，大多数的解释都令人阅读起来很费力。本文旨在阐明什么是原型继承以及如何在Javascript中使用原型继承。</p>
-<h2 id="原型继承的定义"><a href="#原型继承的定义" class="headerlink" title="原型继承的定义"></a>原型继承的定义</h2><p>当你在阅读关于Javascript原型继承资料时，你经常能看到如下定义：</p>
+<h2 id="原型继承的定义"><a class="header-anchor" href="#原型继承的定义">¶</a>原型继承的定义</h2>
+<p>当你在阅读关于Javascript原型继承资料时，你经常能看到如下定义：</p>
 <blockquote>
 <p>当访问一个对象的属性时，JavasScript将会向上对原型链进行横切直到找到请求的名称的属性。<a href="http://bonsaiden.github.com/JavaScript-Garden/#object.prototype" target="_blank" rel="external">Javascript Garden</a></p>
 </blockquote>
@@ -446,8 +471,9 @@
 <blockquote>
 <p>提示：<em>__proto__</em> 是不规范的且不应该出现在你的代码中。在本文中使用它仅作为阐明Javascript原型继承工作原理。</p>
 </blockquote>
-<p>下面这段代码展示了Javascript引擎是如何检索属性的（仅供阅读）。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getProperty</span>(<span class="params">obj, prop</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (obj.hasOwnProperty(prop))</div><div class="line">    <span class="keyword">return</span> obj[prop]</div><div class="line"> </div><div class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (obj.__proto__ !== <span class="literal">null</span>)</div><div class="line">    <span class="keyword">return</span> getProperty(obj.__proto__, prop)</div><div class="line"> </div><div class="line">  <span class="keyword">else</span></div><div class="line">    <span class="keyword">return</span> <span class="literal">undefined</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>举一个常用的例子：2D Point(二维点)。一个点拥有两个坐标值 <em>x</em>,<em>y</em>,以及一个<em>print</em>方法。使用之前的关于原型继承的书面定义，我们将会创建一个带有<em>x</em>,<em>y</em>,<em>print</em>等三个属性的二维点对象。为了创建这个新的二维点，我们只是创建了一个带有<em>__proto__</em>的新对象并赋值给<em>Point</em>。</p>
+<p>下面这段代码展示了Javascript引擎是如何检索属性的（仅供阅读）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getProperty</span>(<span class="params">obj, prop</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (obj.hasOwnProperty(prop))</div><div class="line">    <span class="keyword">return</span> obj[prop]</div><div class="line"> </div><div class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (obj.__proto__ !== <span class="literal">null</span>)</div><div class="line">    <span class="keyword">return</span> getProperty(obj.__proto__, prop)</div><div class="line"> </div><div class="line">  <span class="keyword">else</span></div><div class="line">    <span class="keyword">return</span> <span class="literal">undefined</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>举一个常用的例子：2D Point(二维点)。一个点拥有两个坐标值 <em>x</em>,<em>y</em>,以及一个<em>print</em>方法。使用之前的关于原型继承的书面定义，我们将会创建一个带有<em>x</em>,<em>y</em>,<em>print</em>等三个属性的二维点对象。为了创建这个新的二维点，我们只是创建了一个带有*__proto__<em>的新对象并赋值给</em>Point*。</p>
 <p><a href="http://blog.vjeux.com/2011/javascript/how-prototypal-inheritance-really-works.html" target="_blank" rel="external">原文链接</a></p>
 
           
@@ -602,6 +628,9 @@
   </a>
 </div>
 
+<div style="position: absolute;left: 0px;bottom: 0px;">
+  <a href="https://www.upyun.com/index.html" title="感谢又拍云提供云存储支持" target="_blank"><img src="http://hylpwfile.b0.upaiyun.com/static/www/img/upyun_logo_90x45.png"></a>
+</div>
 
         
 
