@@ -82,7 +82,7 @@ AVR C 语言开发环境 CrossPack-AVR
 <meta property="og:image" content="http://notes.hyl.pw//hylpwfile.b0.upaiyun.com/emoji/2/72x72/1f604.png">
 <meta property="og:image" content="http://notes.hyl.pw//hylpwfile.b0.upaiyun.com/emoji/2/72x72/1f604.png">
 <meta property="og:image" content="http://hylpwfile.b0.upaiyun.com/images/2017/2/keyboard-layout.png">
-<meta property="og:updated_time" content="2017-01-20T02:12:31.000Z">
+<meta property="og:updated_time" content="2017-01-20T07:59:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何自己制作机械键盘">
 <meta name="twitter:description" content="看到同事都在用机械键盘来编写世界上最好的语言，自己心里痒痒  但是找来找去也没找到合适的，主要还是穷给闹的。
@@ -331,12 +331,16 @@ AVR C 语言开发环境 CrossPack-AVR
 <p><img src="http://hylpwfile.b0.upaiyun.com/images/2017/2/keyboard-layout.png" alt="keyboard-layout"></p>
 <p>布局代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[&quot;~\n`&quot;,&quot;!\n1&quot;,&quot;@\n2&quot;,&quot;#\n3&quot;,&quot;$\n4&quot;,&quot;%\n5&quot;,&quot;^\n6&quot;,&quot;&amp;\n7&quot;,&quot;*\n8&quot;,&quot;(\n9&quot;,&quot;)\n0&quot;,&quot;_\n-&quot;,&quot;+\n=&quot;,&#123;w:1.5&#125;,&quot;Backspace&quot;,&#123;x:0.25&#125;,&quot;FN&quot;,&quot;Home&quot;,&quot;Page up&quot;],</div><div class="line">[&#123;w:1.5&#125;,&quot;Tab&quot;,&quot;Q&quot;,&quot;W&quot;,&quot;E&quot;,&quot;R&quot;,&quot;T&quot;,&quot;Y&quot;,&quot;U&quot;,&quot;I&quot;,&quot;O&quot;,&quot;P&quot;,&quot;&#123;\n[&quot;,&quot;&#125;\n]&quot;,&quot;|\n\\&quot;,&#123;x:0.25&#125;,&quot;Delete&quot;,&quot;End&quot;,&quot;Page Down&quot;],</div><div class="line">[&#123;w:1.75&#125;,&quot;Caps Lock&quot;,&quot;A&quot;,&quot;S&quot;,&quot;D&quot;,&quot;F&quot;,&quot;G&quot;,&quot;H&quot;,&quot;J&quot;,&quot;K&quot;,&quot;L&quot;,&quot;:\n;&quot;,&quot;\&quot;\n&apos;&quot;,&#123;w:1.75&#125;,&quot;Enter&quot;],</div><div class="line">[&#123;w:2.25&#125;,&quot;Shift&quot;,&quot;Z&quot;,&quot;X&quot;,&quot;C&quot;,&quot;V&quot;,&quot;B&quot;,&quot;N&quot;,&quot;M&quot;,&quot;&lt;\n,&quot;,&quot;&gt;\n.&quot;,&quot;?\n/&quot;,&#123;w:2.25&#125;,&quot;Shift&quot;,&#123;x:1.25&#125;,&quot;up&quot;],</div><div class="line">[&#123;w:1.5&#125;,&quot;Ctrl&quot;,&#123;w:1.25&#125;,&quot;Opt&quot;,&#123;w:1.5&#125;,&quot;Command&quot;,&#123;a:7,w:6&#125;,&quot;&quot;,&#123;a:4,w:1.5&#125;,&quot;Command&quot;,&#123;w:1.25&#125;,&quot;Opt&quot;,&#123;w:1.5&#125;,&quot;Ctrl&quot;,&#123;x:0.25&#125;,&quot;left&quot;,&quot;down&quot;,&quot;right&quot;]</div></pre></td></tr></table></figure>
+<h2 id="根据布局开发pcb"><a class="header-anchor" href="#根据布局开发pcb">¶</a>根据布局开发PCB<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></h2>
+<p>待续。。。</p>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
 <li id="fn1" class="footnote-item"><p><a href="https://github.com/komar007/gh60" target="_blank" rel="external">开源的机械键盘硬件方案</a>. <a href="#fnref1" class="footnote-backref">↩</a> <a href="#fnref1:1" class="footnote-backref">↩</a></p>
 </li>
 <li id="fn2" class="footnote-item"><p><a href="https://github.com/tmk/tmk_keyboard" target="_blank" rel="external">基于AVR和Cortex-M的键盘主控程序</a>. <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>印制电路板，现代电子产品的基石，电子元器件的支撑体 <a href="#fnref3" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section>
@@ -501,7 +505,7 @@ AVR C 语言开发环境 CrossPack-AVR
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">¶准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定制自己喜欢的布局"><span class="nav-number">2.</span> <span class="nav-text">¶定制自己喜欢的布局</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">¶准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定制自己喜欢的布局"><span class="nav-number">2.</span> <span class="nav-text">¶定制自己喜欢的布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据布局开发pcb"><span class="nav-number">3.</span> <span class="nav-text">¶根据布局开发PCB[3]</span></a></li></ol></div>
             
 
           </div>
