@@ -46,7 +46,7 @@
 <link href="https://hylpwfile.b0.upaiyun.com/static/notes/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="cocos2d-html," />
 
 
 
@@ -62,24 +62,13 @@
 
 
 
-<meta name="description" content="看到同事都在用机械键盘来编写世界上最好的语言，自己心里痒痒  但是找来找去也没找到合适的，主要还是穷给闹的。
-后来在网上搜寻了一番找到了GH60[1]和tmk_keyboard[2]项目。软件硬件都有了 搞起来。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何自己制作机械键盘">
-<meta property="og:url" content="http://notes.hyl.pw/2017/2.html">
+<meta property="og:title" content="【一】熟悉cocos2d-html平台">
+<meta property="og:url" content="http://notes.hyl.pw/2017/4.html">
 <meta property="og:site_name" content="延龙笔记">
-<meta property="og:description" content="看到同事都在用机械键盘来编写世界上最好的语言，自己心里痒痒  但是找来找去也没找到合适的，主要还是穷给闹的。
-后来在网上搜寻了一番找到了GH60[1]和tmk_keyboard[2]项目。软件硬件都有了 搞起来。">
-<meta property="og:image" content="http://notes.hyl.pw//hylpwfile.b0.upaiyun.com/emoji/2/72x72/1f602.png">
-<meta property="og:image" content="http://notes.hyl.pw//hylpwfile.b0.upaiyun.com/emoji/2/72x72/1f604.png">
-<meta property="og:image" content="http://notes.hyl.pw//hylpwfile.b0.upaiyun.com/emoji/2/72x72/1f604.png">
-<meta property="og:image" content="http://hylpwfile.b0.upaiyun.com/static/notes/images/2017/2/keyboard-layout.png">
-<meta property="og:updated_time" content="2017-01-22T07:24:41.000Z">
+<meta property="og:updated_time" content="2017-01-23T07:31:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何自己制作机械键盘">
-<meta name="twitter:description" content="看到同事都在用机械键盘来编写世界上最好的语言，自己心里痒痒  但是找来找去也没找到合适的，主要还是穷给闹的。
-后来在网上搜寻了一番找到了GH60[1]和tmk_keyboard[2]项目。软件硬件都有了 搞起来。">
-<meta name="twitter:image" content="http://notes.hyl.pw//hylpwfile.b0.upaiyun.com/emoji/2/72x72/1f602.png">
+<meta name="twitter:title" content="【一】熟悉cocos2d-html平台">
 
 
 
@@ -107,13 +96,13 @@
 
 
 
-  <link rel="canonical" href="http://notes.hyl.pw/2017/2.html"/>
+  <link rel="canonical" href="http://notes.hyl.pw/2017/4.html"/>
 
 
 
 
 
-  <title> 如何自己制作机械键盘 | 延龙笔记 </title>
+  <title> 【一】熟悉cocos2d-html平台 | 延龙笔记 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -226,7 +215,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://notes.hyl.pw/2017/2.html">
+  <link itemprop="mainEntityOfPage" href="http://notes.hyl.pw/2017/4.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Yanlong">
@@ -250,7 +239,7 @@
             
             
               
-                如何自己制作机械键盘
+                【一】熟悉cocos2d-html平台
               
             
           </h1>
@@ -265,8 +254,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-18T15:39:22+08:00">
-                2017-01-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-23T14:53:16+08:00">
+                2017-01-23
               </time>
             
 
@@ -301,37 +290,7 @@
       
 
       
-        <p>看到同事都在用机械键盘来编写世界上最好的语言，自己心里痒痒 <img class="emoji" draggable="false" alt="😂" src="//hylpwfile.b0.upaiyun.com/emoji/2/72x72/1f602.png"> 但是找来找去也没找到合适的，主要还是<strong>穷</strong>给闹的。
-后来在网上搜寻了一番找到了GH60<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>和tmk_keyboard<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>项目。软件硬件都有了<img class="emoji" draggable="false" alt="😄" src="//hylpwfile.b0.upaiyun.com/emoji/2/72x72/1f604.png"> 搞起来。</p>
-<a id="more"></a>
-<h2 id="准备"><a class="header-anchor" href="#准备">¶</a>准备</h2>
-<ol>
-<li>PCB 绘制工具 KiCad</li>
-<li>AVR C 语言开发环境 <em>CrossPack-AVR</em></li>
-<li>试轴器一个，包含 黑、红、青、茶、四个常用轴体</li>
-<li>制作材料一套，主要包含键盘冒、轴体若干、1n4148二级管若干、atmega32u4主控一个、恒温电烙铁一个、鸡翅木板一块</li>
-</ol>
-<h2 id="定制自己喜欢的布局"><a class="header-anchor" href="#定制自己喜欢的布局">¶</a>定制自己喜欢的布局</h2>
-<p>自己制作键盘主要是可以根据自己的需求来定制布局。由于GH60<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1]</a></sup>项目是60%布局，缺少了我常用的Page Up、Page Down、Home、End和上下左右按键，所以只能自己定制了<img class="emoji" draggable="false" alt="😄" src="//hylpwfile.b0.upaiyun.com/emoji/2/72x72/1f604.png"></p>
-<p>刚好有<a href="http://www.keyboard-layout-editor.com/#/" target="_blank" rel="external">keyboard-layout-editor</a>这个项目可以来自定义布局</p>
-<p>我的布局</p>
-<p><img src="http://hylpwfile.b0.upaiyun.com/static/notes/images/2017/2/keyboard-layout.png" alt="keyboard-layout"></p>
-<p>布局代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[&quot;~\n`&quot;,&quot;!\n1&quot;,&quot;@\n2&quot;,&quot;#\n3&quot;,&quot;$\n4&quot;,&quot;%\n5&quot;,&quot;^\n6&quot;,&quot;&amp;\n7&quot;,&quot;*\n8&quot;,&quot;(\n9&quot;,&quot;)\n0&quot;,&quot;_\n-&quot;,&quot;+\n=&quot;,&#123;w:1.5&#125;,&quot;Backspace&quot;,&#123;x:0.25&#125;,&quot;FN&quot;,&quot;Home&quot;,&quot;Page up&quot;],</div><div class="line">[&#123;w:1.5&#125;,&quot;Tab&quot;,&quot;Q&quot;,&quot;W&quot;,&quot;E&quot;,&quot;R&quot;,&quot;T&quot;,&quot;Y&quot;,&quot;U&quot;,&quot;I&quot;,&quot;O&quot;,&quot;P&quot;,&quot;&#123;\n[&quot;,&quot;&#125;\n]&quot;,&quot;|\n\\&quot;,&#123;x:0.25&#125;,&quot;Delete&quot;,&quot;End&quot;,&quot;Page Down&quot;],</div><div class="line">[&#123;w:1.75&#125;,&quot;Caps Lock&quot;,&quot;A&quot;,&quot;S&quot;,&quot;D&quot;,&quot;F&quot;,&quot;G&quot;,&quot;H&quot;,&quot;J&quot;,&quot;K&quot;,&quot;L&quot;,&quot;:\n;&quot;,&quot;\&quot;\n&apos;&quot;,&#123;w:1.75&#125;,&quot;Enter&quot;],</div><div class="line">[&#123;w:2.25&#125;,&quot;Shift&quot;,&quot;Z&quot;,&quot;X&quot;,&quot;C&quot;,&quot;V&quot;,&quot;B&quot;,&quot;N&quot;,&quot;M&quot;,&quot;&lt;\n,&quot;,&quot;&gt;\n.&quot;,&quot;?\n/&quot;,&#123;w:2.25&#125;,&quot;Shift&quot;,&#123;x:1.25&#125;,&quot;up&quot;],</div><div class="line">[&#123;w:1.5&#125;,&quot;Ctrl&quot;,&#123;w:1.25&#125;,&quot;Opt&quot;,&#123;w:1.5&#125;,&quot;Command&quot;,&#123;a:7,w:6&#125;,&quot;&quot;,&#123;a:4,w:1.5&#125;,&quot;Command&quot;,&#123;w:1.25&#125;,&quot;Opt&quot;,&#123;w:1.5&#125;,&quot;Ctrl&quot;,&#123;x:0.25&#125;,&quot;left&quot;,&quot;down&quot;,&quot;right&quot;]</div></pre></td></tr></table></figure>
-<h2 id="根据布局开发pcb"><a class="header-anchor" href="#根据布局开发pcb">¶</a>根据布局开发PCB<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></h2>
-<p>待续。。。</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://github.com/komar007/gh60" target="_blank" rel="external">开源的机械键盘硬件方案</a>. <a href="#fnref1" class="footnote-backref">↩</a> <a href="#fnref1:1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="https://github.com/tmk/tmk_keyboard" target="_blank" rel="external">基于AVR和Cortex-M的键盘主控程序</a>. <a href="#fnref2" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p>印制电路板，现代电子产品的基石，电子元器件的支撑体 <a href="#fnref3" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
-
+        
       
     </div>
 
@@ -352,13 +311,19 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/cocos2d-html/" rel="tag"># cocos2d-html</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/1.html" rel="next" title="How Prototypal Inheritance really works">
-                <i class="fa fa-chevron-left"></i> How Prototypal Inheritance really works
+              <a href="/2017/3.html" rel="next" title="markdown-it-emoji 使用 twemoji 渲染预览">
+                <i class="fa fa-chevron-left"></i> markdown-it-emoji 使用 twemoji 渲染预览
               </a>
             
           </div>
@@ -366,10 +331,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/3.html" rel="prev" title="markdown-it-emoji 使用 twemoji 渲染预览">
-                markdown-it-emoji 使用 twemoji 渲染预览 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -416,17 +377,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://hylpwfile.b0.upaiyun.com/static/www/img/avatar.jpg"
@@ -528,22 +480,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">¶准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定制自己喜欢的布局"><span class="nav-number">2.</span> <span class="nav-text">¶定制自己喜欢的布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据布局开发pcb"><span class="nav-number">3.</span> <span class="nav-text">¶根据布局开发PCB[3]</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>
